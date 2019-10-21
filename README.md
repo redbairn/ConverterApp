@@ -69,6 +69,7 @@ http://api.openweathermap.org/data/2.5/forecast?q=DUBLIN&mode=json&appid=Xj667TM
 
 
 ## Task List
-[ ] Apply the paths and details similar to the JerseyTutorial for our web service - Craig.
-[ ] To check out the next part with the API Proxy, setup the API key - David
+- [ ] Apply the paths and details similar to the JerseyTutorial for our web service (apply to changes to first part) - Craig.
+- [ ] To check out the next part with the API Proxy - David
+- [ ] Set up the API key for Part II - David
 
