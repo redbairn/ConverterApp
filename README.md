@@ -66,3 +66,9 @@ its use although this will be cover in class before the submission deadline.
 **Example:**
 Input in your browser:
 http://api.openweathermap.org/data/2.5/forecast?q=DUBLIN&mode=json&appid=Xj667TMlp4topMGN
+
+
+## Task List
+[ ] Apply the paths and details similar to the JerseyTutorial for our web service - Craig.
+[ ] To check out the next part with the API Proxy, setup the API key - David
+
