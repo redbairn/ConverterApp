@@ -25,14 +25,11 @@ public class numberToRomanNumeral {
     @GET
     @Path("/{param}")
     public Response sayRomanNumeral(@PathParam("param") int number) {
-        
-        Scanner scan = new Scanner(System.in);
-        //System.out.print("Please enter a number between 1 and 3999: ");
-        //int number = scan.nextInt();
-         
+       
+        // initialise variables
         String roman="";
          
-         
+        // Validation check for number range
         if(number<=0 || number>3999){
             System.out.println("Invalid input.  You must enter a number between 1 and 3999");
             System.out.println("Please enter another number now: ");

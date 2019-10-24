@@ -6,10 +6,11 @@
 package com.mycompany.romanconverter;
 
 import java.util.Scanner;
-//import javax.ws.rs.GET;
-//import javax.ws.rs.Path;
-//import javax.ws.rs.PathParam;
-//import javax.ws.rs.core.Response;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
 
 /**
  *
@@ -17,27 +18,34 @@ import java.util.Scanner;
  * @author craig bell
  * 
  */
+
+@Path("/roman2num")
 public class romanNumeralToNumber {
         static String romanNumeralToNumber;
         static int decimalNum;
-        public static void main(String args[]) {
-                romanNumeralToNumber rmtoD = new romanNumeralToNumber();
-                rmtoD .convertToDecimal();
-                rmtoD .printromanNumeralToNumber(romanNumeralToNumber);
-        }
+//        public static void main(String args[]) {
+//                romanNumeralToNumber rmtoD = new romanNumeralToNumber();
+//                rmtoD .convertToDecimal();
+//                rmtoD .printRomanNumeralToNumber(romanNumeralToNumber);
+//        }
+        
+        @GET
+        @Path("/{param}")
+        public Response sayNumeral(@PathParam("param") String romanNumeralToNumber) {
  
-        public void convertToDecimal () {
-                Scanner scan = new Scanner(System.in);
-                System.out.println("Enter a Roman Numeral: ");
-                romanNumeralToNumber = scan.nextLine();
+                //Scanner scan = new Scanner(System.in);
+                
+                
+                //System.out.println("Enter a Roman Numeral: ");
+                //romanNumeralToNumber = scan.nextLine();
                 romanNumeralToNumber = romanNumeralToNumber.toUpperCase();
                 
-                int l=  romanNumeralToNumber.length();
+                int len=romanNumeralToNumber.length();
                 int num=0;
                 int previousnum = 0;
-                for (int i=l-1;i>=0;i--)
+                for (int i=len-1;i>=0;i--)
                 { 
-                        char x =  romanNumeralToNumber.charAt(i);
+                        char x = romanNumeralToNumber.charAt(i);
                         x = Character.toUpperCase(x);
                         switch(x)
                         {  
@@ -71,17 +79,14 @@ public class romanNumeralToNumber {
                                 break;
                         }           
                         if (num<previousnum)
-                        {decimalNum= decimalNum-num;}
-                         else
-                        decimalNum= decimalNum+num;
-                }
-        }
-        public static void printromanNumeralToNumber (String romanNumeralToNumber){
-                System.out.println ("The equivalent of the Roman numeral "+romanNumeralToNumber +" is "+decimalNum);
-        }
- 
-        public static void printDecimal (int decimalNum){
-                System.out.println ("Decimal Number stored is: " + decimalNum);
-        }
+                        {
+                            decimalNum= decimalNum-num;
+                        }else{
+                            decimalNum= decimalNum+num;
+                        }
+                }//endOfFor
+                String output = "<h1>Conversion</h1><p style=\"font-size: 22px\">Your numeral is: <strong> " + decimalNum + "</strong>!</p>";
+                return Response.status(200).entity(output).build();
+        }//sayNumeral
         
 }
