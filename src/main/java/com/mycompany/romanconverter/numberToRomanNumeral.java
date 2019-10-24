@@ -4,24 +4,31 @@
  * and open the template in the editor.
  */
 package com.mycompany.romanconverter;
+
 import java.util.Scanner;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
 
 /**
  *
  * @author david flood
  * @author craig bell
  */
+
+@Path("/num2roman")
 public class numberToRomanNumeral {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-
-         
+    
+    //System.out.println("Please enter a number between 1 and 3999: ");
+    
+    @GET
+    @Path("/{param}")
+    public Response sayRomanNumeral(@PathParam("param") int number) {
+        
         Scanner scan = new Scanner(System.in);
-        System.out.print("Please enter a number between 1 and 3999: ");
-        int number = scan.nextInt();
+        //System.out.print("Please enter a number between 1 and 3999: ");
+        //int number = scan.nextInt();
          
         String roman="";
          
@@ -30,7 +37,7 @@ public class numberToRomanNumeral {
             System.out.println("Invalid input.  You must enter a number between 1 and 3999");
             System.out.print("Please enter another number now: ");
             number = scan.nextInt();
-            }
+        }
          
         while(number>=1000){
             roman += "M";
@@ -98,8 +105,12 @@ public class numberToRomanNumeral {
         }
          
         System.out.println("The Roman Numeral is "+ roman);
-    }
-}       
+        
+        
+        String output = "<h1>Conversion</h1>Your roman numeral is: <strong> " + roman + "</strong>!";
+        return Response.status(200).entity(output).build();
+    }//sayRomanNumeral
+}//numberToRomanNumeral
 
     
 

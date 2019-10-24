@@ -4,11 +4,18 @@
  * and open the template in the editor.
  */
 package com.mycompany.romanconverter;
+
 import java.util.Scanner;
+//import javax.ws.rs.GET;
+//import javax.ws.rs.Path;
+//import javax.ws.rs.PathParam;
+//import javax.ws.rs.core.Response;
+
 /**
  *
  * @author david flood 
  * @author craig bell
+ * 
  */
 public class romanNumeralToNumber {
         static String romanNumeralToNumber;
