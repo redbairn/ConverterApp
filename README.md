@@ -69,7 +69,8 @@ http://api.openweathermap.org/data/2.5/forecast?q=DUBLIN&mode=json&appid=Xj667TM
 
 
 ## Task List
-- [ ] Apply the paths and details similar to the JerseyTutorial for our web service (apply to changes to first part) - Craig.
+- [X] Amend "numberToRomanNumeral" to be set up for API. - Craig
+- [ ] Amend "romanNumeralToNumber" to be set up for API. - Craig
 - [ ] To check out the next part with the API Proxy - David
 - [ ] Set up the API key for Part II - David
 
