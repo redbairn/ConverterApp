@@ -5,8 +5,6 @@
  */
 package com.mycompany.romanconverter;
 
-import java.util.Scanner;
-
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -23,21 +21,11 @@ import javax.ws.rs.core.Response;
 public class romanNumeralToNumber {
         static String romanNumeralToNumber;
         static int decimalNum;
-//        public static void main(String args[]) {
-//                romanNumeralToNumber rmtoD = new romanNumeralToNumber();
-//                rmtoD .convertToDecimal();
-//                rmtoD .printRomanNumeralToNumber(romanNumeralToNumber);
-//        }
         
         @GET
         @Path("/{param}")
         public Response sayNumeral(@PathParam("param") String romanNumeralToNumber) {
  
-                //Scanner scan = new Scanner(System.in);
-                
-                
-                //System.out.println("Enter a Roman Numeral: ");
-                //romanNumeralToNumber = scan.nextLine();
                 romanNumeralToNumber = romanNumeralToNumber.toUpperCase();
                 
                 int len=romanNumeralToNumber.length();
@@ -49,32 +37,32 @@ public class romanNumeralToNumber {
                         x = Character.toUpperCase(x);
                         switch(x)
                         {  
-                                case 'I':
+                            case 'I':
                                 previousnum = num;
                                 num = 1;
                                 break;
-                             case 'V':
-                                     previousnum = num;
+                            case 'V':
+                                previousnum = num;
                                 num = 5;
                                 break;
-                                case 'X':
-                                        previousnum = num;
+                            case 'X':
+                                previousnum = num;
                                 num = 10;
                                 break;
-                                case 'L':
-                                        previousnum = num;
+                            case 'L':
+                                previousnum = num;
                                 num = 50;
                                 break;
-                                case 'C':
-                                        previousnum = num;
+                            case 'C':
+                                previousnum = num;
                                 num = 100;
                                 break;
-                                case 'D':
-                                        previousnum = num;
+                            case 'D':
+                                previousnum = num;
                                 num = 500;
                                 break;
-                                case 'M':
-                                        previousnum = num;
+                            case 'M':
+                                previousnum = num;
                                 num = 1000;
                                 break;
                         }           
@@ -82,6 +70,7 @@ public class romanNumeralToNumber {
                         {
                             decimalNum= decimalNum-num;
                         }else{
+                            // Problems here becuase the value gets added to the previous amount
                             decimalNum= decimalNum+num;
                         }
                 }//endOfFor

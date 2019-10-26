@@ -5,7 +5,6 @@
  */
 package com.mycompany.romanconverter;
 
-import java.util.Scanner;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -20,7 +19,7 @@ import javax.ws.rs.core.Response;
 @Path("/num2roman")
 public class numberToRomanNumeral {
     
-    //System.out.println("Please enter a number between 1 and 3999: ");
+    //System.out.println("Please enter a number between 1 and 3999: ");   
     
     @GET
     @Path("/{param}")
