@@ -25,22 +25,29 @@ public class romanNumeralToNumber {
         @GET
         @Path("/{param}")
         public Response sayNumeral(@PathParam("param") String romanNumeralToNumber) {
- 
+                
+            // Set the RomanNumeral to an uppercase value
                 romanNumeralToNumber = romanNumeralToNumber.toUpperCase();
                 
+                // Create a variable to be the length of the RomanNumeral
                 int len=romanNumeralToNumber.length();
-                int num=0;
-                int previousnum = 0;
-                for (int i=len-1;i>=0;i--)
+                int num=0; // Initialised num at zero to begin with
+                int previousnum = 0; // Initialised previousnum at zero to begin with
+                for (int i=len-1;i>=0;i--) // Loop through the characters in the string
                 { 
+                        // CharAt(i) returns the character at the specified index in the string "romanNumeralToNumber". 
+                        // The index value that we pass in this method should be between 0 and (length of string-1)
+                        // We set the value to be a character named 'x'.
                         char x = romanNumeralToNumber.charAt(i);
-                        x = Character.toUpperCase(x);
+                        //x = Character.toUpperCase(x);
+                        // If the equality is found, switch starts to execute the code starting from the corresponding case, 
+                        // until the nearest break (or until the end of switch).
                         switch(x)
                         {  
                             case 'I':
                                 previousnum = num;
-                                num = 1;
-                                break;
+                                num = 1; // This is the value for this case
+                                break; 
                             case 'V':
                                 previousnum = num;
                                 num = 5;
@@ -65,17 +72,19 @@ public class romanNumeralToNumber {
                                 previousnum = num;
                                 num = 1000;
                                 break;
-                        }           
-                        if (num<previousnum)
-                        {
-                            decimalNum= decimalNum-num;
-                        }else{
-                            // Problems here becuase the value gets added to the previous amount
-                            decimalNum= decimalNum+num;
-                        }
+                        }  
+                        // Possibly working correctly here with the break but not in the else
+                      if (num<previousnum){
+                            decimalNum = decimalNum-num;
+                            break; // For testing purposes
+                      }else{ 
+                          // Problems here becuase the value gets added to the previous amount
+                            decimalNum = decimalNum+num;
+                            break; // For testing purposes
+                      }
                 }//endOfFor
                 String output = "<h1>Conversion</h1><p style=\"font-size: 22px\">Your numeral is: <strong> " + decimalNum + "</strong>!</p>";
+                // Using the Response builder we output the HTML above with the correct value with a HTTP status code 200
                 return Response.status(200).entity(output).build();
-        }//sayNumeral
-        
-}
+        }//sayNumeral      
+}//romanNumeralToNumber
