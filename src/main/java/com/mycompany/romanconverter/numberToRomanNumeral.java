@@ -33,7 +33,7 @@ public class numberToRomanNumeral {
             System.out.println("Invalid input.  You must enter a number between 1 and 3999");
             System.out.println("Please enter another number now: ");
             
-            String output = "<h1>Oh no!!</h1><p style=\"font-size: 22px\">Invalid input.  You must enter a number between 1 and 3999. Please enter another number now!</p>";
+            String output = "<h1>Oh no!! Invalid Number</h1><p style=\"font-size: 22px\">Invalid input.  You must enter a number between 1 and 3999. Please enter another number now!</p>";
             return Response.status(200).entity(output).build();
             
             //number = scan.nextInt();

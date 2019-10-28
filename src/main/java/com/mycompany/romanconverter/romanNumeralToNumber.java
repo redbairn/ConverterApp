@@ -91,8 +91,9 @@ public class romanNumeralToNumber {
 
             }  // end while
             
-            if (arabic > 3999){
-                throw new NumberFormatException("Roman numeral must have value 3999 or less.");    
+            if (arabic > 3999){ 
+                String output = "<h1>Oh no!! Invalid Roman Numeral</h1><p style=\"font-size: 22px\">Invalid input.  You must enter a Roman Numeral between 1 and 3999. Please enter another number now!</p>";
+                return Response.status(200).entity(output).build();
             }
             num = arabic;  
                         
