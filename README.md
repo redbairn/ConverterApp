@@ -70,7 +70,7 @@ http://api.openweathermap.org/data/2.5/forecast?q=DUBLIN&mode=json&appid=Xj667TM
 
 ## Task List
 - [X] Amend "numberToRomanNumeral" to be set up for API. - Craig
-- [ ] Amend "romanNumeralToNumber" to be set up for API. - Craig
-- [ ] To check out the next part with the API Proxy - David
-- [ ] Set up the API key for Part II - David
+- [X] Amend "romanNumeralToNumber" to be set up for API. - Craig
+- [X] To check out the next part with the API Proxy - David
+- [X] Set up the API key for Part II - David
 
